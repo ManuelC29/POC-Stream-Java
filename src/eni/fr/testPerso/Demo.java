@@ -22,15 +22,15 @@ public class Demo {
 		
 		System.out.println("Le premier Stream");
 		resto.getLstClient().stream()								//je stream donc la liste des clients
-		.filter(v->v.getMontantCmd()>10 && v.getMontantCmd()<50)	//(un peut …quivalent au where en sql) je filtre que ceux qui ont payÈs plus de 10Ä mais quand mÍme moi de 50Ä
-		.map(v->v.getNom())											//(un peut …quivalent au select en sql) je garde que leur nom
+		.filter(v->v.getMontantCmd()>10 && v.getMontantCmd()<50)	//(un peut √âquivalent au where en sql) je filtre que ceux qui ont pay√©s plus de 10‚Ç¨ mais quand m√™me moins de 50‚Ç¨
+		.map(v->v.getNom())											//(un peut √âquivalent au select en sql) je garde que leur nom
 		.forEach(System.out::println);								//je fais une boucle foreach et pour chaque ligne je fais un affichage console
 		
-		//rÈcupËre la liste des NOMS de client(map) qui ont payÈs plus de 10Ä et moins de 50Ä(filter) et le stock dans une list
+		//r√©cup√®re la liste des NOMS de client(map) qui ont pay√©s plus de 10‚Ç¨ et moins de 50‚Ç¨(filter) et le stock dans une list
 		System.out.println("Le second Stream");
 		List<String> a = resto.getLstClient().stream()				//je stream la liste des client
-		.filter(v->v.getMontantCmd()>10 && v.getMontantCmd()<50)	//je ne prend que ceux qui on pay√© + de 10 et - de 50 ICI v est notre client
-		.map(v->v.getNom())											//je rÈcup que les nom
+		.filter(v->v.getMontantCmd()>10 && v.getMontantCmd()<50)	//je ne prend que ceux qui on pay√É¬© + de 10 et - de 50 ICI v est notre client
+		.map(v->v.getNom())											//je r√©cup que les nom
 		.collect(Collectors.toList());								//je stock dans une list (a ici)
 		
 		System.out.println(a);
